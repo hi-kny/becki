@@ -149,24 +149,28 @@ nav a:not(.btn):hover { color: var(--gold); }
 .g img { width: 100%; transition: transform .8s ease, opacity .3s; }
 .g:hover img { transform: scale(1.03); }
 
-/* Trust */
-.trust { text-align: center; }
-.stats {
-  list-style: none; padding: 0 0 3.5rem; margin-bottom: 3.5rem;
-  display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem 4rem;
-  color: var(--ink-soft);
+/* Client logo marquee */
+.trust { padding: clamp(2.5rem, 5vw, 4rem) 0; overflow: hidden; }
+.trust > * { max-width: none; }
+.marquee {
+  display: flex; width: max-content;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
-.stats strong { display: block; font: 400 2rem/1.2 var(--serif); color: var(--ink); }
-.logos {
-  list-style: none; padding: 0;
-  display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem 2rem; align-items: center;
+.trust .marquee { max-width: none; width: 100%; }
+.marquee-track {
+  list-style: none; margin: 0; padding: 0; flex: none;
+  display: flex; align-items: center; gap: clamp(3rem, 6vw, 5.5rem); padding-right: clamp(3rem, 6vw, 5.5rem);
+  animation: marquee 60s linear infinite;
 }
-.logos img {
-  width: 100%; max-width: 130px; margin: 0 auto;
-  filter: grayscale(1); opacity: .7;
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track img { width: auto; max-width: none; opacity: .82; }
+@keyframes marquee { to { transform: translateX(-100%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; flex-wrap: wrap; justify-content: center; }
+  .marquee-track[aria-hidden] { display: none; }
+  .trust .marquee { -webkit-mask-image: none; mask-image: none; }
 }
-
-.logos img[src$=".jpg"] { mix-blend-mode: multiply; }
 
 /* Testimonials */
 .testimonials { background: var(--paper-deep); }
@@ -256,7 +260,6 @@ form .btn { justify-self: start; }
   .offer-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .offer-grid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .offer-grid.three .offer:last-child { grid-column: 1 / -1; justify-self: center; width: calc((100% - var(--gap)) / 2); }
-  .logos { grid-template-columns: repeat(4, 1fr); }
   .quote-grid { grid-template-columns: 1fr; max-width: 640px; }
   .about figure { max-width: 420px; margin: 0 auto; }
   .live { grid-template-columns: 1fr; }
@@ -279,8 +282,6 @@ form .btn { justify-self: start; }
   nav ul.open { display: flex; }
   .brand span { font-size: .7rem; letter-spacing: .2em; }
   .row { grid-template-columns: 1fr; }
-  .logos { grid-template-columns: repeat(3, 1fr); }
-  .stats { gap: 1.5rem; flex-direction: column; }
   .gallery { columns: 2; column-gap: 8px; }
   .style-grid { grid-template-columns: 1fr; }
   .offer h3 { font-size: 1.25rem; }
