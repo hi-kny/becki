@@ -79,21 +79,19 @@ form.addEventListener('submit', async e => {
   }
 });
 
-// Pinterest profile widget, sized to the column it sits in
+// Inquiry form stays collapsed until "Start inquiry" (or any Inquire link) opens it
 (function () {
-  const feed = document.querySelector('.pin-feed');
-  if (!feed) return;
-  // The widget adds ~20px of its own padding
-  const width = Math.min(feed.clientWidth, 1180) - 20;
-  const a = document.createElement('a');
-  a.href = feed.dataset.profile;
-  a.dataset.pinDo = 'embedUser';
-  a.dataset.pinBoardWidth = width;
-  a.dataset.pinScaleWidth = width < 500 ? 110 : 160;
-  a.dataset.pinScaleHeight = width < 500 ? 360 : 420;
-  feed.append(a);
-  const s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://assets.pinterest.com/js/pinit.js';
-  document.body.append(s);
+  const panel = document.getElementById('inquiry-panel');
+  const toggle = document.querySelector('.inquiry-toggle');
+  if (!panel || !toggle) return;
+  const open = (focus) => {
+    if (panel.classList.contains('open')) return;
+    panel.classList.add('open');
+    panel.inert = false;
+    toggle.setAttribute('aria-expanded', 'true');
+    if (focus) setTimeout(() => panel.querySelector('input:not([type=hidden]):not([name="company-url"])').focus({ preventScroll: true }), 400);
+  };
+  toggle.addEventListener('click', () => open(true));
+  document.querySelectorAll('a[href="#inquire"]').forEach(a => a.addEventListener('click', () => open(false)));
+  if (location.hash === '#inquire') open(false);
 })();

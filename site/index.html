@@ -112,10 +112,6 @@
   <!-- MY OFFERINGS (copy from wellspringwrites.com home + portfolio pages) -->
   <section id="services" class="offerings">
     <h2>My Offerings</h2>
-    <figure class="offer-banner">
-      <img src="img/work/13-wax-seals-gold-navy-envelopes.jpg" alt="Rows of gold wax seals on navy envelopes" loading="lazy" width="1600" height="1280">
-    </figure>
-
     <!-- Crafts: from the home page -->
     <div class="offer-grid three">
       <article class="offer">
@@ -140,7 +136,6 @@
     </div>
 
     <!-- Where they're offered: from the portfolio page -->
-    <p class="kicker offer-kicker">Offered for</p>
     <div class="offer-grid four">
       <article class="offer">
         <img src="img/work/15-agate-place-cards.jpg" alt="Blue agate slices lettered with guest names in white" loading="lazy" width="1600" height="1067">
@@ -186,15 +181,69 @@
     </div>
   </section>
 
-  <!-- LETTERING STYLES (from Becky's style sheet) -->
-  <section id="styles" class="styles">
-    <h2>Choose your hand</h2>
-    <p class="section-lede">The same address, four ways. Every style can be adapted in ink color, size and flourish.</p>
-    <div class="style-grid">
-      <figure><button class="g"><img src="img/styles/style-copperplate.jpg" alt="Envelope addressed in classic copperplate script, white ink on black" loading="lazy" width="940" height="669"></button><figcaption>Classic Copperplate</figcaption></figure>
-      <figure><button class="g"><img src="img/styles/style-flourished.jpg" alt="Envelope addressed in a flourished romantic script, white ink on black" loading="lazy" width="940" height="669"></button><figcaption>Flourished Script</figcaption></figure>
-      <figure><button class="g"><img src="img/styles/style-print.jpg" alt="Envelope addressed in clean hand-lettered print capitals, white ink on black" loading="lazy" width="940" height="669"></button><figcaption>Hand-Lettered Print</figcaption></figure>
-      <figure><button class="g"><img src="img/styles/style-brush.jpg" alt="Envelope addressed in loose modern brush lettering, white ink on black" loading="lazy" width="940" height="669"></button><figcaption>Modern Brush</figcaption></figure>
+  <!-- INQUIRY FORM -->
+  <section id="inquire" class="inquire">
+    <h2>Let's make something</h2>
+    <p>Tell me a little about what you're planning and I'll reply within <span class="tbd">[2 business days]</span>.</p>
+    <button type="button" class="btn inquiry-toggle" aria-expanded="false" aria-controls="inquiry-panel">Start inquiry</button>
+    <!-- Collapsed until the button (or any "Inquire" link) opens it -->
+    <div class="inquiry-panel" id="inquiry-panel" inert>
+      <div class="inquiry-panel-inner">
+    <!-- Submissions go to a Google Sheet through the Apps Script in /apps-script.
+         Replace PASTE_WEB_APP_URL with the script's /exec URL after deploying it. -->
+    <form name="inquiry" id="inquiry-form" data-endpoint="PASTE_WEB_APP_URL">
+      <input type="hidden" name="form_id" value="onepage">
+      <p class="hp" aria-hidden="true"><label>Leave blank <input name="company-url"></label></p>
+      <div class="row">
+        <label>Name<input name="name" required autocomplete="name"></label>
+        <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      </div>
+      <fieldset>
+        <legend>What are you planning?</legend>
+        <label class="chip"><input type="radio" name="type" value="wedding" required> Wedding</label>
+        <label class="chip"><input type="radio" name="type" value="event"> Live event / brand activation</label>
+        <label class="chip"><input type="radio" name="type" value="gift"> Gift or keepsake</label>
+        <label class="chip"><input type="radio" name="type" value="other"> Something else</label>
+      </fieldset>
+      <div class="row">
+        <label>Date<input type="date" name="date"></label>
+        <label>Location<input name="location" placeholder="City or venue"></label>
+      </div>
+      <div class="row">
+        <label>Approximate quantity<input name="quantity" placeholder="Guests, envelopes, bottles…"></label>
+        <label>Budget range
+          <select name="budget">
+            <option value="">Prefer not to say</option>
+            <option>Under $500</option>
+            <option>$500 – $1,500</option>
+            <option>$1,500 – $5,000</option>
+            <option>$5,000+</option>
+          </select>
+        </label>
+      </div>
+      <label>Tell me more<textarea name="message" rows="5" placeholder="The occasion, the feeling you're after, links to inspiration…"></textarea></label>
+      <button type="submit" class="btn">Send inquiry</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+    <div class="form-thanks" hidden tabindex="-1">
+      <h3>Thank you.</h3>
+      <p>Your note is on its way. I'll be in touch soon.</p>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <figure>
+      <img src="img/becky-lee.jpg" alt="Becky Lee smiling at her desk with pen, ink bottles and calligraphy in progress" loading="lazy" width="675" height="675">
+    </figure>
+    <div>
+      <p class="kicker">Meet the hand behind the pen</p>
+      <h2>Hi, I'm Becky Lee.</h2>
+      <p>I love this art form and the many shapes it has taken through the 12 years I&rsquo;ve been doing this professionally. I&rsquo;ve had the privilege of serving many clients, my work has been flown to different countries, and I&rsquo;m still grateful to work for private clientele as well as large-scale events.</p>
+      <p>My obsession started early: origami, Korean stationery sets, and a fascination with how handwriting carries weight. A single calligraphy workshop turned it into a practice rooted in precision, artistry and presence.</p>
+      <p>What I do is for someone who wants to leave an impression. A well-executed piece of custom calligraphy, done by hand, is a bold statement. It represents intention, a curating mind, an appreciation for expression, and perhaps a desire to be a patron of the arts.</p>
     </div>
   </section>
 
@@ -242,20 +291,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <figure>
-      <img src="img/becky-lee.jpg" alt="Becky Lee smiling at her desk with pen, ink bottles and calligraphy in progress" loading="lazy" width="675" height="675">
-    </figure>
-    <div>
-      <p class="kicker">Meet the hand behind the pen</p>
-      <h2>Hi, I'm Becky Lee.</h2>
-      <p>I love this art form and the many shapes it has taken through the 12 years I&rsquo;ve been doing this professionally. I&rsquo;ve had the privilege of serving many clients, my work has been flown to different countries, and I&rsquo;m still grateful to work for private clientele as well as large-scale events.</p>
-      <p>My obsession started early: origami, Korean stationery sets, and a fascination with how handwriting carries weight. A single calligraphy workshop turned it into a practice rooted in precision, artistry and presence.</p>
-      <p>What I do is for someone who wants to leave an impression. A well-executed piece of custom calligraphy, done by hand, is a bold statement. It represents intention, a curating mind, an appreciation for expression, and perhaps a desire to be a patron of the arts.</p>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section id="faq" class="faq">
     <h2>Good to know</h2>
@@ -281,58 +316,16 @@
     </details>
   </section>
 
-  <!-- INQUIRY FORM -->
-  <section id="inquire" class="inquire">
-    <h2>Let's make something</h2>
-    <p>Tell me a little about what you're planning and I'll reply within <span class="tbd">[2 business days]</span>.</p>
-    <!-- Submissions go to a Google Sheet through the Apps Script in /apps-script.
-         Replace PASTE_WEB_APP_URL with the script's /exec URL after deploying it. -->
-    <form name="inquiry" id="inquiry-form" data-endpoint="PASTE_WEB_APP_URL">
-      <input type="hidden" name="form_id" value="onepage">
-      <p class="hp" aria-hidden="true"><label>Leave blank <input name="company-url"></label></p>
-      <div class="row">
-        <label>Name<input name="name" required autocomplete="name"></label>
-        <label>Email<input type="email" name="email" required autocomplete="email"></label>
-      </div>
-      <fieldset>
-        <legend>What are you planning?</legend>
-        <label class="chip"><input type="radio" name="type" value="wedding" required> Wedding</label>
-        <label class="chip"><input type="radio" name="type" value="event"> Live event / brand activation</label>
-        <label class="chip"><input type="radio" name="type" value="gift"> Gift or keepsake</label>
-        <label class="chip"><input type="radio" name="type" value="other"> Something else</label>
-      </fieldset>
-      <div class="row">
-        <label>Date<input type="date" name="date"></label>
-        <label>Location<input name="location" placeholder="City or venue"></label>
-      </div>
-      <div class="row">
-        <label>Approximate quantity<input name="quantity" placeholder="Guests, envelopes, bottles…"></label>
-        <label>Budget range
-          <select name="budget">
-            <option value="">Prefer not to say</option>
-            <option>Under $500</option>
-            <option>$500 – $1,500</option>
-            <option>$1,500 – $5,000</option>
-            <option>$5,000+</option>
-          </select>
-        </label>
-      </div>
-      <label>Tell me more<textarea name="message" rows="5" placeholder="The occasion, the feeling you're after, links to inspiration…"></textarea></label>
-      <button type="submit" class="btn">Send inquiry</button>
-      <p class="form-status" role="status" aria-live="polite"></p>
-    </form>
-    <div class="form-thanks" hidden tabindex="-1">
-      <h3>Thank you.</h3>
-      <p>Your note is on its way. I'll be in touch soon.</p>
+  <!-- LETTERING STYLES (from Becky's style sheet) -->
+  <section id="styles" class="styles">
+    <h2>Choose your style</h2>
+    <p class="section-lede">The same address, four ways. Every style can be adapted in ink color, size and flourish.</p>
+    <div class="style-grid">
+      <figure><button class="g"><img src="img/styles/style-copperplate.jpg" alt="Envelope addressed in classic copperplate script, white ink on black" loading="lazy" width="940" height="669"></button><figcaption>Classic Copperplate</figcaption></figure>
+      <figure><button class="g"><img src="img/styles/style-flourished.jpg" alt="Envelope addressed in a flourished romantic script, white ink on black" loading="lazy" width="940" height="669"></button><figcaption>Flourished Script</figcaption></figure>
+      <figure><button class="g"><img src="img/styles/style-print.jpg" alt="Envelope addressed in clean hand-lettered print capitals, white ink on black" loading="lazy" width="940" height="669"></button><figcaption>Hand-Lettered Print</figcaption></figure>
+      <figure><button class="g"><img src="img/styles/style-brush.jpg" alt="Envelope addressed in loose modern brush lettering, white ink on black" loading="lazy" width="940" height="669"></button><figcaption>Modern Brush</figcaption></figure>
     </div>
-  </section>
-
-
-  <!-- PINTEREST: Pinterest's official profile widget shows her latest pins automatically (no login needed) -->
-  <section id="pinterest" class="pinterest">
-    <p class="kicker">On Pinterest</p>
-    <h2><a href="https://www.pinterest.com/wellspringwrites/" target="_blank" rel="noopener">@wellspringwrites</a></h2>
-    <div class="pin-feed" data-profile="https://www.pinterest.com/wellspringwrites/"></div>
   </section>
 
 </main>

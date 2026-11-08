@@ -111,18 +111,17 @@ nav a:not(.btn):hover { color: var(--gold); }
 
 /* My Offerings: every card photo is the same 4:5 size, in both rows */
 .offerings { --gap: clamp(1rem, 2.5vw, 2.5rem); }
-.offer-banner { margin: 0 auto clamp(2.5rem, 5vw, 4rem); }
-.offer-banner img { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; }
 .offer-grid { display: grid; gap: var(--gap); justify-content: center; }
-.offer-grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.offer-grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(3rem, 6vw, 5rem); }
 /* Three cards at the same width as the four below, centered */
 .offer-grid.three { grid-template-columns: repeat(3, calc((100% - 3 * var(--gap)) / 4)); }
 .offer img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 1.2rem; }
 .offer h3 { font-size: 1.5rem; margin-bottom: .4em; }
 .offer p { color: var(--ink-soft); font-size: .98rem; margin: 0 0 .7em; }
-.offer-kicker { text-align: center; margin-top: clamp(3rem, 6vw, 5rem); margin-bottom: 2rem; }
+
 
 /* Live events */
+.live { background: var(--paper-deep); }
 .live { display: grid; grid-template-columns: 1fr 1.5fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; max-width: none; }
 .live > * { margin: 0; max-width: none; }
 .live-intro { padding-left: clamp(0px, 4vw, 64px); }
@@ -188,6 +187,7 @@ nav a:not(.btn):hover { color: var(--gold); }
 .testimonials figcaption { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
 
 /* About */
+.about { background: var(--paper-deep); }
 .about { display: grid; grid-template-columns: .85fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
 .about > * { margin: 0; max-width: none; }
 .about img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
@@ -195,7 +195,7 @@ nav a:not(.btn):hover { color: var(--gold); }
 .about p:not(.kicker) { color: var(--ink-soft); }
 
 /* FAQ */
-.faq { background: var(--paper-deep); }
+.faq { background: var(--paper); }
 .faq > details { max-width: 760px; border-bottom: 1px solid var(--line); }
 .faq summary {
   cursor: pointer; list-style: none; padding: 1.3rem 2rem 1.3rem 0; position: relative;
@@ -207,9 +207,15 @@ nav a:not(.btn):hover { color: var(--gold); }
 .faq details p { margin: 0 0 1.4rem; color: var(--ink-soft); }
 
 /* Inquiry form */
+.inquiry-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .6s ease; }
+.inquiry-panel.open { grid-template-rows: 1fr; }
+.inquiry-panel-inner { overflow: hidden; }
+.inquiry-panel.open .inquiry-panel-inner { padding-top: 1rem; }
+.inquiry-toggle[aria-expanded="true"] { display: none; }
+@media (prefers-reduced-motion: reduce) { .inquiry-panel { transition: none; } }
 .inquire { text-align: center; }
 .inquire > * { max-width: 760px; }
-.inquire > p { color: var(--ink-soft); margin-bottom: 3rem; }
+.inquire > p { color: var(--ink-soft); margin-bottom: 2rem; }
 form { text-align: left; display: grid; gap: 1.4rem; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
 label { display: grid; gap: .4rem; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
@@ -226,13 +232,6 @@ legend { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; mar
 .chip:has(input:checked) { border-color: var(--navy); background: var(--navy); color: var(--paper); }
 form .btn { justify-self: start; }
 .hp { position: absolute; left: -9999px; }
-
-/* Pinterest feed */
-.pinterest { text-align: center; background: var(--paper-deep); }
-.pinterest h2 { margin-bottom: 1.4em; }
-.pinterest h2 a { text-decoration: none; }
-.pinterest h2 a:hover { color: var(--gold); }
-.pin-feed { min-height: 200px; display: flex; justify-content: center; }
 
 /* Footer */
 .site-footer { text-align: center; padding: 4rem 16px 3rem; }
