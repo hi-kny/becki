@@ -101,10 +101,18 @@ nav a:not(.btn):hover { color: var(--gold); }
 }
 .philosophy p:last-child { color: var(--ink-soft); }
 
-/* Services */
-.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 3vw, 3rem); }
-.service img { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; margin-bottom: 1.5rem; }
-.service p { color: var(--ink-soft); }
+/* My Offerings: every card photo is the same 4:5 size, in both rows */
+.offerings { --gap: clamp(1rem, 2.5vw, 2.5rem); }
+.offer-banner { margin: 0 auto clamp(2.5rem, 5vw, 4rem); }
+.offer-banner img { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; }
+.offer-grid { display: grid; gap: var(--gap); justify-content: center; }
+.offer-grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+/* Three cards at the same width as the four below, centered */
+.offer-grid.three { grid-template-columns: repeat(3, calc((100% - 3 * var(--gap)) / 4)); }
+.offer img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 1.2rem; }
+.offer h3 { font-size: 1.5rem; margin-bottom: .4em; }
+.offer p { color: var(--ink-soft); font-size: .98rem; margin: 0 0 .7em; }
+.offer-kicker { text-align: center; margin-top: clamp(3rem, 6vw, 5rem); margin-bottom: 2rem; }
 
 /* Live events */
 .live { display: grid; grid-template-columns: 1fr 1.5fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; max-width: none; }
@@ -238,7 +246,9 @@ form .btn { justify-self: start; }
   .hero-logo { margin-left: auto; margin-right: auto; }
   .lede { margin-left: auto; margin-right: auto; }
   .hero-image img { height: 52vh; }
-  .service-grid { grid-template-columns: 1fr; max-width: 520px; }
+  .offer-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .offer-grid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .offer-grid.three .offer:last-child { grid-column: 1 / -1; justify-self: center; width: calc((100% - var(--gap)) / 2); }
   .logos { grid-template-columns: repeat(4, 1fr); }
   .testimonials { grid-template-columns: 1fr; }
   .about figure { max-width: 420px; margin: 0 auto; }
@@ -266,6 +276,8 @@ form .btn { justify-self: start; }
   .stats { gap: 1.5rem; flex-direction: column; }
   .gallery { columns: 2; column-gap: 8px; }
   .style-grid { grid-template-columns: 1fr; }
+  .offer h3 { font-size: 1.25rem; }
+  .offer p { font-size: .88rem; line-height: 1.6; }
   .g { margin-bottom: 8px; }
 }
 
