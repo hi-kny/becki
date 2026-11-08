@@ -27,6 +27,8 @@ wellspring-writes/
 
 ## The site
 
+**Live preview:** https://hi-kny.github.io/becki/ (GitHub Pages, redeploys on every push to `main`)
+
 Plain HTML/CSS/JS with no build step. To preview it locally, run `python3 -m http.server --directory site` and open http://localhost:8000.
 
 - **Placeholders:** anything Becki still needs to supply is highlighted yellow (class `tbd`). Search `tbd` in `index.html` to find them all. Remove the highlight style in `styles.css` before launch.
