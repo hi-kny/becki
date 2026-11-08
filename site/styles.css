@@ -93,7 +93,15 @@ nav a:not(.btn):hover { color: var(--gold); }
 .hero-image img { width: 100%; height: min(78vh, 720px); object-fit: cover; }
 
 /* Philosophy */
-.philosophy { text-align: center; background: var(--paper-deep); }
+.philosophy {
+  text-align: center;
+  /* Place-card photo behind the text, softened by a paper-colored wash that is
+     strongest in the middle where the words sit */
+  background:
+    radial-gradient(ellipse 60% 70% at center, rgba(241, 235, 224, .93) 0%, rgba(241, 235, 224, .84) 60%, rgba(241, 235, 224, .68) 100%),
+    url("img/work/14-place-cards-deckled-edge.jpg") center / cover no-repeat;
+  background-color: var(--paper-deep);
+}
 .philosophy > * { max-width: 760px; }
 .philosophy blockquote {
   font: italic 400 clamp(1.7rem, 3.4vw, 2.5rem)/1.35 var(--serif);
