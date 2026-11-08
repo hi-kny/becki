@@ -184,6 +184,7 @@
     <!-- Submissions go to a Google Sheet through the Apps Script in /apps-script.
          Replace PASTE_WEB_APP_URL with the script's /exec URL after deploying it. -->
     <form name="inquiry" id="inquiry-form" data-endpoint="PASTE_WEB_APP_URL">
+      <input type="hidden" name="form_id" value="onepage">
       <p class="hp" aria-hidden="true"><label>Leave blank <input name="company-url"></label></p>
       <div class="row">
         <label>Name<input name="name" required autocomplete="name"></label>
