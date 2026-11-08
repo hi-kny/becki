@@ -1,6 +1,6 @@
 # Wellspring Writes — One-Page Website
 
-A one-page refresh of [wellspringwrites.com](https://www.wellspringwrites.com/) for Becki's fine lettering studio (pointed-pen calligraphy, engraving, foiling, wax seals, live event work).
+A one-page refresh of [wellspringwrites.com](https://www.wellspringwrites.com/) for Becky's fine lettering studio (pointed-pen calligraphy, engraving, foiling, wax seals, live event work).
 
 Source doc: [Website Refresh (Google Doc)](https://docs.google.com/document/d/1QbinNnZyPiSvJGM06on8qWjcM6NWzyMpwNlUbv4wnAc/edit)
 
@@ -10,14 +10,14 @@ Source doc: [Website Refresh (Google Doc)](https://docs.google.com/document/d/1Q
 wellspring-writes/
 ├── README.md                 ← you are here
 ├── docs/
-│   ├── content-brief.md      ← Becki's words, goals, inspiration sites, open questions
+│   ├── content-brief.md      ← Becky's words, goals, inspiration sites, open questions
 │   ├── best-practices.md     ← research: what calligraphy/engraving sites need
 │   └── form-setup.md         ← connecting the inquiry form to Google Sheets
 ├── apps-script/
 │   └── Code.gs               ← Google Apps Script that saves form submissions to the sheet
 ├── images/
 │   ├── logo/                 ← brand mark
-│   ├── about/                ← Becki's headshot (from the current About page)
+│   ├── about/                ← Becky's headshot (from the current About page)
 │   ├── client-logos/         ← 12 brand logos from the current About page
 │   └── portfolio/            ← work photos, numbered in the order they appear in the doc
 └── site/                     ← the one-page site (deploy this folder as-is)
@@ -31,7 +31,7 @@ wellspring-writes/
 
 Plain HTML/CSS/JS with no build step. To preview it locally, run `python3 -m http.server --directory site` and open http://localhost:8000.
 
-- **Placeholders:** anything Becki still needs to supply is highlighted yellow (class `tbd`). Search `tbd` in `index.html` to find them all. Remove the highlight style in `styles.css` before launch.
+- **Placeholders:** anything Becky still needs to supply is highlighted yellow (class `tbd`). Search `tbd` in `index.html` to find them all. Remove the highlight style in `styles.css` before launch.
 - **Inquiry form:** submissions go to the [Contact Form Google Sheet](https://docs.google.com/spreadsheets/d/1pi5QcrqqstRHxXLGhTMOO6-UJ8nNWSWP1cc5HX24agk/edit) through `apps-script/Code.gs`. Works on any host. One-time setup steps are in [docs/form-setup.md](docs/form-setup.md).
 
 ## Image inventory

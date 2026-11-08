@@ -17,7 +17,7 @@ A one-page site fixes most of this by putting everything in one scroll with one 
 ## Recommended page outline
 
 1. **Hero** — logo, one-line promise, one button ("Inquire"). Large texture photo behind or beside it (`06-handmade-paper-vows-floral` or `13-wax-seals-gold-navy-envelopes`).
-2. **The philosophy** — 2–3 sentences of Becki's "made for beauty, slowness, rest" message. This is what makes her different. Keep it short.
+2. **The philosophy** — 2–3 sentences of Becky's "made for beauty, slowness, rest" message. This is what makes her different. Keep it short.
 3. **Services, split by need** (the TJ Calligraphy pattern):
    - *Weddings & Celebrations* — invitations, envelope addressing, place cards, vows
    - *Live Events & Brand Activations* — on-site calligraphy and engraving for guests
@@ -26,7 +26,7 @@ A one-page site fixes most of this by putting everything in one scroll with one 
 4. **Portfolio grid** — 9–12 of the strongest images, mixed shapes, large enough to see the lettering. Click to enlarge.
 5. **Credibility strip** — "12 years · private clients & large-scale events · work shipped worldwide," plus client names or logos if allowed.
 6. **Testimonials** — 2–3 short quotes.
-7. **About Becki** — photo of her at work + the "double take" story.
+7. **About Becky** — photo of her at work + the "double take" story.
 8. **How it works / FAQ** — booking lead time, turnaround, travel, starting prices or minimums, what she provides vs. what the client provides.
 9. **Inquiry form** — short, at the bottom, with the same button repeated in the header.
 10. **Footer** — email, Instagram, Pinterest, service area, ©.

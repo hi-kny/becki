@@ -14,13 +14,13 @@ Social: Instagram and Pinterest, @wellspringwrites.
 
 ## From her current About page
 
-Becki Lee (headshot: `images/about/becki-lee-headshot.jpg`, red backdrop, black turtleneck).
+Becky Lee (headshot: `images/about/becky-lee-headshot-red.jpg`, red backdrop, black turtleneck).
 
 - Started early with origami, Korean stationery sets and a fascination with handwriting. A calligraphy workshop turned it into a practice "rooted in precision, artistry, and presence."
 - Positions the work as "the defining edge of an experience": hand-engraved gifts, live activations, bespoke commissions.
 - **Brands she has worked with** (logos in `images/client-logos/`): Alo, Avon, Burberry, Facebook, Ferragamo, Guerlain, Hearst, Jimmy Choo, Saint Jane, Ted Baker, Tocca, Vice.
 
-## Becki's message (from the doc)
+## Becky's message (from the doc)
 
 > Even in the fast-paced craze of daily life, with the vast accessibility of technology and speed, we are also made for beauty, slowness, rest, and the art of learning.
 
@@ -40,16 +40,16 @@ Tone: warm, unhurried, reverent about craft. Not salesy.
 ## Decisions (2026-11-06)
 
 - **Service area:** based locally and travels for events. City still to confirm.
-- **Inquiry method:** short inquiry form that emails Becki. Fields are listed in `best-practices.md`.
+- **Inquiry method:** short inquiry form that emails Becky. Fields are listed in `best-practices.md`.
 - **Pricing:** undecided, so leave an optional "starting at" slot.
 - **Hosting:** new static site (hand-built HTML, free hosting such as Netlify or GitHub Pages, with wellspringwrites.com pointed at it). The form needs a static-friendly backend such as Netlify Forms or Formspree.
 
-## Open questions for Becki
+## Open questions for Becky
 
 - [ ] **City** she's based in, and how far she travels.
 - [ ] **Contact email** for the site (the doc lists only Kelly's address).
 - [ ] **Domain access:** who controls wellspringwrites.com DNS, so it can point to the new host.
-- [ ] **Spelling:** the About page says "Becky" but the headshot file is "BeckiLee". Which is right?
+- [x] **Spelling:** she goes by **Becky Lee** on the calligraphy site.
 - [ ] **Client logos:** OK to keep showing all 12 brands? (Saint Jane is probably the serum-bottle activation.)
 - [ ] **Starting prices:** show any? (undecided)
 - [ ] **Testimonials:** any to quote?
