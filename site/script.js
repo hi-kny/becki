@@ -47,7 +47,6 @@ document.querySelectorAll('main section:not(.hero) > *').forEach(el => {
   io.observe(el);
 });
 
-document.getElementById('year').textContent = new Date().getFullYear();
 
 // Inquiry form → Google Sheet (via the Apps Script web app in /apps-script)
 const form = document.getElementById('inquiry-form');
@@ -59,7 +58,7 @@ form.addEventListener('submit', async e => {
   const button = form.querySelector('button[type="submit"]');
   statusEl.className = 'form-status';
   if (!endpoint || endpoint.startsWith('PASTE_')) {
-    statusEl.textContent = 'The form isn’t connected yet. Please email instead.';
+    statusEl.textContent = 'The form isn’t connected yet. Please try again soon.';
     statusEl.classList.add('error');
     return;
   }
@@ -73,7 +72,7 @@ form.addEventListener('submit', async e => {
     thanks.hidden = false;
     thanks.focus();
   } catch (err) {
-    statusEl.textContent = 'Sorry, that didn’t go through. Please try again or email me directly.';
+    statusEl.textContent = 'Sorry, that didn’t go through. Please try again in a moment.';
     statusEl.classList.add('error');
     button.disabled = false;
   }

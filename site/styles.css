@@ -107,7 +107,8 @@ nav a:not(.btn):hover { color: var(--gold); }
   font: italic 400 clamp(1.7rem, 3.4vw, 2.5rem)/1.35 var(--serif);
   margin: 0 auto 2rem;
 }
-.philosophy p:last-child { color: var(--ink-soft); }
+.philosophy p { color: var(--ink-soft); }
+.philosophy .philosophy-cta { margin-top: 2rem; }
 
 /* My Offerings: every card photo is the same 4:5 size, in both rows */
 .offerings { --gap: clamp(1rem, 2.5vw, 2.5rem); }
@@ -148,11 +149,13 @@ nav a:not(.btn):hover { color: var(--gold); }
 /* Gallery */
 .work { background: var(--navy); color: var(--paper); }
 .work h2 { color: var(--paper); }
-.gallery { columns: 3 280px; column-gap: 14px; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .g {
   display: block; width: 100%; padding: 0; border: 0; margin: 0 0 14px;
   background: none; cursor: zoom-in; break-inside: avoid; overflow: hidden;
 }
+.gallery .g { margin: 0; }
+.gallery .g img { aspect-ratio: 4 / 5; height: auto; object-fit: cover; }
 .g img { width: 100%; height: auto; transition: transform .8s ease, opacity .3s; }
 .g:hover img { transform: scale(1.03); }
 
@@ -181,8 +184,9 @@ nav a:not(.btn):hover { color: var(--gold); }
 
 /* Testimonials */
 .testimonials { background: var(--paper-deep); }
-.quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: start; }
-.testimonials figure { margin: 0; padding: 2rem 1.8rem; background: var(--paper); border-top: 2px solid var(--gold); }
+/* Cards stretch to the tallest one so all three boxes are the same size */
+.quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: stretch; }
+.testimonials figure { margin: 0; padding: 2rem 1.8rem; background: var(--paper); display: flex; flex-direction: column; justify-content: space-between; }
 .testimonials blockquote { font: italic 400 1.15rem/1.6 var(--serif); margin: 0 0 1.4rem; }
 .testimonials figcaption { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
 
@@ -289,7 +293,7 @@ form .btn { justify-self: start; }
   nav ul.open { display: flex; }
   .brand span { font-size: .7rem; letter-spacing: .2em; }
   .row { grid-template-columns: 1fr; }
-  .gallery { columns: 2; column-gap: 8px; }
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .style-grid { grid-template-columns: 1fr; }
   .offer h3 { font-size: 1.25rem; }
   .offer p { font-size: .88rem; line-height: 1.6; }
