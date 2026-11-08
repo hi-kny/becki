@@ -78,3 +78,33 @@ form.addEventListener('submit', async e => {
     button.disabled = false;
   }
 });
+
+// Instagram carousel: arrows scroll one "page"; swap in the live Behold feed once a Feed ID is set
+(function () {
+  const section = document.getElementById('instagram');
+  if (!section) return;
+  const feedId = section.dataset.beholdFeed;
+  if (feedId) {
+    const live = section.querySelector('.ig-live');
+    live.innerHTML = `<behold-widget feed-id="${feedId}"></behold-widget>`;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://w.behold.so/widget.js';
+    document.head.append(s);
+    live.hidden = false;
+    section.querySelector('.ig-carousel').hidden = true;
+    return;
+  }
+  const track = section.querySelector('.ig-track');
+  const prev = section.querySelector('.ig-nav.prev');
+  const next = section.querySelector('.ig-nav.next');
+  const update = () => {
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+  };
+  prev.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }));
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();

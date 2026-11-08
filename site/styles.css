@@ -215,6 +215,33 @@ legend { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; mar
 form .btn { justify-self: start; }
 .hp { position: absolute; left: -9999px; }
 
+/* Instagram carousel */
+.instagram { text-align: center; background: var(--paper-deep); }
+.instagram h2 { margin-bottom: 1.4em; }
+.instagram h2 a { text-decoration: none; }
+.instagram h2 a:hover { color: var(--gold); }
+.ig-carousel { position: relative; max-width: var(--wrap); }
+.ig-track {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 4 * 12px) / 5); gap: 12px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
+}
+.ig-track::-webkit-scrollbar { display: none; }
+.ig-track li { scroll-snap-align: start; }
+.ig-track a { display: block; overflow: hidden; }
+.ig-track img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; transition: transform .8s ease; }
+.ig-track a:hover img { transform: scale(1.04); }
+.ig-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 1;
+  width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(250, 247, 241, .92); color: var(--ink); font-size: 1.8rem; line-height: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .12);
+}
+.ig-nav.prev { left: -14px; }
+.ig-nav.next { right: -14px; }
+.ig-nav[disabled] { opacity: 0; pointer-events: none; }
+.ig-follow { margin-top: 2.5rem; }
+
 /* Footer */
 .site-footer { text-align: center; padding: 4rem 16px 3rem; border-top: 1px solid var(--line); }
 .site-footer img { width: 110px; height: auto; margin: 0 auto 1.5rem; }
@@ -256,6 +283,7 @@ form .btn { justify-self: start; }
   .live-intro { padding-left: 0; text-align: center; }
   .live-intro h2 { text-align: center; }
   .live-strip { grid-auto-columns: 62%; }
+  .ig-track { grid-auto-columns: calc((100% - 2 * 12px) / 3); }
 }
 
 /* Phone */
@@ -276,6 +304,8 @@ form .btn { justify-self: start; }
   .stats { gap: 1.5rem; flex-direction: column; }
   .gallery { columns: 2; column-gap: 8px; }
   .style-grid { grid-template-columns: 1fr; }
+  .ig-track { grid-auto-columns: 70%; }
+  .ig-nav { display: none; }
   .offer h3 { font-size: 1.25rem; }
   .offer p { font-size: .88rem; line-height: 1.6; }
   .g { margin-bottom: 8px; }
