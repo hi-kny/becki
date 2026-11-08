@@ -169,7 +169,7 @@ nav a:not(.btn):hover { color: var(--gold); }
 .marquee-track {
   list-style: none; margin: 0; padding: 0; flex: none;
   display: flex; align-items: center; gap: clamp(3rem, 6vw, 5.5rem); padding-right: clamp(3rem, 6vw, 5.5rem);
-  animation: marquee 60s linear infinite;
+  animation: marquee 120s linear infinite;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-track img { width: auto; max-width: none; opacity: .82; }
