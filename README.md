@@ -12,8 +12,7 @@ wellspring-writes/
 ├── docs/
 │   ├── content-brief.md      ← Becky's words, goals, inspiration sites, open questions
 │   ├── best-practices.md     ← research: what calligraphy/engraving sites need
-│   ├── form-setup.md         ← connecting the inquiry form to Google Sheets
-│   └── instagram-setup.md    ← turning on the live Instagram feed
+│   └── form-setup.md         ← connecting the inquiry form to Google Sheets
 ├── apps-script/
 │   └── Code.gs               ← Google Apps Script that saves form submissions to the sheet
 ├── images/

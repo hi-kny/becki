@@ -79,32 +79,21 @@ form.addEventListener('submit', async e => {
   }
 });
 
-// Instagram carousel: arrows scroll one "page"; swap in the live Behold feed once a Feed ID is set
+// Pinterest profile widget, sized to the column it sits in
 (function () {
-  const section = document.getElementById('instagram');
-  if (!section) return;
-  const feedId = section.dataset.beholdFeed;
-  if (feedId) {
-    const live = section.querySelector('.ig-live');
-    live.innerHTML = `<behold-widget feed-id="${feedId}"></behold-widget>`;
-    const s = document.createElement('script');
-    s.type = 'module';
-    s.src = 'https://w.behold.so/widget.js';
-    document.head.append(s);
-    live.hidden = false;
-    section.querySelector('.ig-carousel').hidden = true;
-    return;
-  }
-  const track = section.querySelector('.ig-track');
-  const prev = section.querySelector('.ig-nav.prev');
-  const next = section.querySelector('.ig-nav.next');
-  const update = () => {
-    prev.disabled = track.scrollLeft <= 2;
-    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
-  };
-  prev.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }));
-  next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }));
-  track.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
-  update();
+  const feed = document.querySelector('.pin-feed');
+  if (!feed) return;
+  // The widget adds ~20px of its own padding
+  const width = Math.min(feed.clientWidth, 1180) - 20;
+  const a = document.createElement('a');
+  a.href = feed.dataset.profile;
+  a.dataset.pinDo = 'embedUser';
+  a.dataset.pinBoardWidth = width;
+  a.dataset.pinScaleWidth = width < 500 ? 110 : 160;
+  a.dataset.pinScaleHeight = width < 500 ? 360 : 420;
+  feed.append(a);
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://assets.pinterest.com/js/pinit.js';
+  document.body.append(s);
 })();
