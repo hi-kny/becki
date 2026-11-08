@@ -295,6 +295,9 @@ form .btn { justify-self: start; }
   .row { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .style-grid { grid-template-columns: 1fr; }
+  /* Calligraphy / Engraving / Foiling: one card per row on phones */
+  .offer-grid.three { grid-template-columns: 1fr; }
+  .offer-grid.three .offer:last-child { grid-column: auto; width: auto; justify-self: stretch; }
   .offer h3 { font-size: 1.25rem; }
   .offer p { font-size: .88rem; line-height: 1.6; }
   .g { margin-bottom: 8px; }
